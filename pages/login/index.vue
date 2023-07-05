@@ -35,6 +35,7 @@
   
   <script>
 export default {
+  layout: 'empty',
   methods: {
     goTo(to) {
       this.$router.push(to)
