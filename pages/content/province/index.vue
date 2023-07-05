@@ -117,10 +117,5 @@ export default {
 </script>
 
 <style scoped>
-#header-card {
-  /* add background url */
-  background: url('https://www.happymindtravels.com/wp-content/uploads/2020/04/patuxai-park-vientiane-laos-happymind-travels.jpg')
-    center center;
-  background-size: cover;
-}
+
 </style>

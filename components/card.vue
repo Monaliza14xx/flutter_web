@@ -23,10 +23,12 @@
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn icon>
-          <v-icon>mdi-bookmark-outline</v-icon>
+          <v-icon v-if="item.bookmarked == false">mdi-bookmark-outline</v-icon>
+          <v-icon v-else color="green">mdi-bookmark</v-icon>
         </v-btn>
         <v-btn icon>
-          <v-icon>mdi-heart-outline</v-icon>
+          <v-icon v-if="item.liked == false">mdi-heart-outline</v-icon>
+          <v-icon color="red" v-else>mdi-heart</v-icon>
         </v-btn>
         <v-btn icon>
           <v-icon>mdi-share-variant</v-icon>

@@ -42,12 +42,12 @@
         ></iframe>
       </div>
     </v-container>
-    <!-- {{ data }} -->
   </div>
 </template>
 
 <script>
 export default {
+  layout: 'empty',
   data() {
     return {
       data: [],
@@ -82,6 +82,7 @@ export default {
             default:
               break
           }
+          console.log('this.data :>> ', this.data)
         })
         .catch((error) => {
           console.error(error)
@@ -89,7 +90,6 @@ export default {
     },
     load() {
       this.isLoad = true
-     
     },
   },
   mounted() {

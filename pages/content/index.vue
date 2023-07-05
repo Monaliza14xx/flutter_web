@@ -80,7 +80,7 @@ export default {
     },
   },
   mounted() {
-    this.$store.commit('SET_STATE', 1)
+    // this.$store.commit('SET_STATE', 1)
     this.getData()
   },
 }

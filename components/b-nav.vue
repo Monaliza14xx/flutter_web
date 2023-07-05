@@ -33,7 +33,7 @@ export default {
           return 'vibrant'
         case 2:
           this.$router.push('/bookmark')
-          return 'red'
+          return 'pink'
         case 3:
           this.$router.push('/profile')
           return 'grey'
