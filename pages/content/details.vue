@@ -12,7 +12,7 @@
       <v-col cols="2"></v-col>
     </v-row>
 
-    <div class="my-4">
+    <v-container class="my-4">
       <v-sheet>
         <img :src="data?.image" width="100%" alt="" />
       </v-sheet>
@@ -22,7 +22,26 @@
       <h3>ລາຍລະອຽດ:</h3>
       <v-divider class="my-4"></v-divider>
       <p>{{ data?.details }}</p>
-    </div>
+      <h3>ແຜນທີ່:</h3>
+      <v-divider class="my-4"></v-divider>
+      <div class="mb-4">
+        <v-progress-linear
+          v-show="isLoad == false"
+          indeterminate
+          color="blue"
+        ></v-progress-linear>
+        <iframe
+          @load="load"
+          :src="data?.map_url"
+          width="100%"
+          height="300"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </v-container>
     <!-- {{ data }} -->
   </div>
 </template>
@@ -34,6 +53,7 @@ export default {
       data: [],
       index: this.$route.query.index,
       type: this.$route.query.type,
+      isLoad: false,
     }
   },
   methods: {
@@ -56,6 +76,9 @@ export default {
             case 'recommends_hotel':
               this.data = res.data.recommends_hotel[this.index]
               break
+            case 'recommends_restaurants':
+              this.data = res.data.recommends_restaurants[this.index]
+              break
             default:
               break
           }
@@ -68,6 +91,13 @@ export default {
         .catch((error) => {
           console.error(error)
         })
+    },
+    load() {
+      this.isLoad = true
+      console.log(
+        '🚀 ~ file: contact.vue:66 ~ load ~ this.isLoad:',
+        this.isLoad
+      )
     },
   },
   mounted() {

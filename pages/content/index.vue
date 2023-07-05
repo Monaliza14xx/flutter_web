@@ -1,80 +1,64 @@
 <template>
-  <div>
+  <div class="mb-16">
     <app-bar></app-bar>
-    <div>
-      <v-card flat>
-        <v-sheet id="header-card" height="150px"> </v-sheet>
-        <v-card-title><h2>ນະຄອນຫຼວງວຽງຈັນ, ລາວ</h2></v-card-title>
-        <v-card-subtitle class="mt-1">
-          ແນະນຳສະຖານທີ່ທ່ອງທ່ຽວ, ທີ່ພັກ, ແລະ ຮ້ານອາຫານ ໃນ
-          ນະຄອນຫຼວງວຽງຈັນ</v-card-subtitle
-        >
-      </v-card>
-      <v-divider class="my-2"></v-divider>
-    </div>
+    <center>
+      <h2>ເລືອກແຂວງ:</h2>
+    </center>
     <v-container>
-      <div v-show="category == 'all'">
-        <div class="d-flex align-center mb-4">
-          <v-icon class="mr-2" color="red">mdi-map-marker</v-icon>
-          <b>ສະຖານທີ່ແນະນຳທັງໝົດ:</b>
-        </div>
-        <card :items="recommends" type="recommends"></card>
-        <v-divider class="my-2"></v-divider>
-      </div>
-      <div v-show="category == 'hill' || category == 'all'">
-        <div id="hill" class="d-flex align-center mb-4">
-          <v-icon class="mr-2" color="green">mdi-image-filter-hdr</v-icon>
-          <b>ສະຖານທີ່ແນະນຳ ໝວດພູ - ຜາ:</b>
-        </div>
-        <card :items="recommends_hill" type="recommends_hill"></card>
-        <v-divider class="my-2"></v-divider>
-      </div>
-      <div v-show="category == 'temple' || category == 'all'">
-        <div id="hill" class="d-flex align-center mb-4">
-          <v-icon class="mr-2" color="orange">mdi-home-variant</v-icon>
-          <b>ສະຖານທີ່ແນະນຳ ໝວດວັດ:</b>
-        </div>
-        <card :items="recommends_temple" type="recommends_temple"></card>
-        <v-divider class="my-2"></v-divider>
-      </div>
-      <div v-show="category == 'hotel' || category == 'all'">
-        <div id="hill" class="d-flex align-center mb-4">
-          <v-icon class="mr-2" color="blue">mdi-bed</v-icon>
-          <b>ສະຖານທີ່ແນະນຳ ໝວດທີ່ພັກ:</b>
-        </div>
-        <card :items="recommends_hotel" type="recommends_hotel"></card>
-        <v-divider class="my-2"></v-divider>
-      </div>
-      <div v-show="category == 'restaurants' || category == 'all'">
-        <div id="hill" class="d-flex align-center mb-4">
-          <v-icon class="mr-2" color="orange">mdi-silverware-fork-knife</v-icon>
-          <b>ສະຖານທີ່ແນະນຳ ໝວດຮ້ານອາຫານ:</b>
-        </div>
-        <card
-          :items="recommends_restaurants"
-          type="recommends_restaurants"
-        ></card>
-        <v-divider class="my-2"></v-divider>
-      </div>
+      <v-divider class="my-2"></v-divider>
+      <v-row>
+        <v-col v-for="(i, idx) in provinces" :key="idx" cols="6">
+          <v-card @click="goTo('/content/province?index='+idx+'&&category=all&&type=recommends')">
+            <v-img
+              :src="i.img"
+              class="white--text align-end"
+              gradient="to bottom, rgba(0,0,0,.2), rgba(0,0,0,.5)"
+              height="200px"
+            >
+              <v-card-title
+                ><h6>{{ i.text }}</h6></v-card-title
+              >
+            </v-img>
+          </v-card>
+        </v-col>
+      </v-row>
     </v-container>
   </div>
 </template>
 
 <script>
-import card from '~/components/card.vue'
 export default {
-  components: { card },
   name: 'Content',
   data() {
     return {
       value: 1,
-      title: 'Zoybad14xx',
       category: this.$route.query.category,
-      recommends: [],
-      recommends_hill: [],
-      recommends_temple: [],
-      recommends_hotel: [],
-      recommends_restaurants: [],
+      provinces: [
+        {
+          text: 'ນະຄອນຫຼວງວຽງຈັນ',
+          img: 'https://s.isanook.com/la/0/rp/rc/w700h366/yacxacm1w0/aHR0cHM6Ly9zLmlzYW5vb2suY29tL2xhLzAvdWQvNi8zMzY0OC8zMzY0OC5qcGc=.jpg',
+        },
+        {
+          text: 'ຫຼວງພະບາງ',
+          img: 'https://2.bp.blogspot.com/--cEc0-rem60/W5PTSuJOH2I/AAAAAAAAAB4/2MQ7uZskLBUz0d6QXGFb36iFZfHLJi1IACLcBGAs/s1600/1.jpg',
+        },
+        {
+          text: 'ໄຊຍະບູລີ',
+          img: 'https://2.bp.blogspot.com/-rhFZgmyT_qA/W82f0Al4S7I/AAAAAAAAS5w/l0fglI6wUYoRBb4xALVfn-GX2r72nJgogCLcBGAs/s1600/1.jpg',
+        },
+        {
+          text: 'ຫຼວງນ້ຳທາ',
+          img: 'https://tapchilaoviet.com/wp-content/uploads/2020/02/2607_anh11.jpg',
+        },
+        {
+          text: 'ສະຫວັນນະເຂດ',
+          img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Rdpt-dino-Svnk2011.jpg/220px-Rdpt-dino-Svnk2011.jpg',
+        },
+        {
+          text: 'ຄຳມ່ວນ',
+          img: 'https://discoverlaos.today/img/post/3ef70252254fcf2daabb917130d31731.jpg?p=original',
+        },
+      ],
     }
   },
   methods: {
@@ -84,12 +68,16 @@ export default {
           'https://raw.githubusercontent.com/Monaliza14xx/flutter_web/main/mockup_data.json'
         )
         .then((res) => {
+          console.log('🚀 ~ file: index.vue:87 ~ .then ~ res:', res)
           this.recommends = res.data.recommends
           this.recommends_hill = res.data.recommends_hill
           this.recommends_temple = res.data.recommends_temple
           this.recommends_hotel = res.data.recommends_hotel
           this.recommends_restaurants = res.data.recommends_restaurants
         })
+    },
+    goTo(to) {
+      this.$router.push(to)
     },
   },
   mounted() {

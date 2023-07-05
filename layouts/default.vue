@@ -43,7 +43,7 @@
     </v-app-bar> -->
     <v-main>
       <v-container>
-        <Nuxt class="my-4" />
+        <Nuxt class="my-6" />
       </v-container>
     </v-main>
     <v-btn
@@ -74,7 +74,7 @@
     </v-navigation-drawer>
   -->
     <!-- <v-footer :absolute="!fixed" app> -->
-      <b-nav />
+      <b-nav class="mt-4" />
     <!-- </v-footer> -->
   </v-app>
 </template>
