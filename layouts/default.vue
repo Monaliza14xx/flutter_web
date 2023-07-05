@@ -46,6 +46,21 @@
         <Nuxt class="my-4" />
       </v-container>
     </v-main>
+    <v-btn
+      v-show="fab"
+      v-scroll="onScroll"
+      class="mb-16"
+      id="print"
+      fab
+      dark
+      fixed
+      bottom
+      right
+      color="blue"
+      @click="toTop"
+    >
+      <v-icon> mdi-chevron-up</v-icon>
+    </v-btn>
 
     <!-- <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
       <v-list>
@@ -58,9 +73,9 @@
       </v-list>
     </v-navigation-drawer>
   -->
-    <v-footer  :absolute="!fixed" app>
+    <!-- <v-footer :absolute="!fixed" app> -->
       <b-nav />
-    </v-footer>
+    <!-- </v-footer> -->
   </v-app>
 </template>
 
@@ -74,6 +89,7 @@ export default {
       clipped: false,
       drawer: false,
       fixed: false,
+      fab: false,
       items: [
         {
           icon: 'mdi-apps',
@@ -92,9 +108,21 @@ export default {
       title: 'Vuetify.js',
     }
   },
+  methods: {
+    onScroll(e) {
+      if (typeof window === 'undefined') return
+      const top = window.pageYOffset || e.target.scrollTop || 0
+      this.fab = top > 500
+    },
+    toTop() {
+      this.$vuetify.goTo(0)
+    },
+  },
 }
 </script>
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Lao+Looped&display=swap');
+
 * {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -105,5 +133,6 @@ export default {
   -ms-touch-action: manipulation;
   -ms-touch-select: none;
   zoom: reset;
+  font-family: 'Noto Sans Lao Looped', sans-serif;
 }
 </style>

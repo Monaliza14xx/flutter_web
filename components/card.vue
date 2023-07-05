@@ -6,6 +6,7 @@
       class="mx-auto mb-4"
       max-width="400"
       shaped
+      @click="goto(i, type)"
     >
       <v-img class="white--text align-end" height="200px" :src="item.image">
       </v-img>
@@ -41,6 +42,20 @@ export default {
     items: {
       type: Array,
       required: true,
+    },
+    type: {
+      type: String,
+    },
+  },
+  methods: {
+    goto(value, type) {
+      this.$router.push(`/content/details?index=${value}&&type=${type}`)
+    },
+    toggle_like(item) {
+      item.liked = !item.liked
+    },
+    toggle_check(item) {
+      item.bookmarked = !item.bookmarked
     },
   },
 }

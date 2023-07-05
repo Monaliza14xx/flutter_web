@@ -127,5 +127,52 @@
       "sub_title": "Intimate villa-style accommodation in a peaceful setting",
       "details": "Vientiane Boutique Villa provides intimate villa-style accommodation in a peaceful setting. The villa offers well-appointed rooms, a private garden, and personalized service. It is an ideal choice for those seeking a quiet and relaxing retreat while still being within reach of Vientiane's attractions."
     }
+  ],
+  "recommends_restaurants": [
+    {
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/07/33/d2/e7/crispy-shrimp-salad-with.jpg",
+      "bookmarked": false,
+      "liked": false,
+      "title": "Makphet",
+      "sub_title": "Laotian Cuisine",
+      "details": "Makphet is a popular restaurant in Vientiane, offering delicious Laotian cuisine. The restaurant is known for its flavorful dishes and vibrant atmosphere.",
+      "website": "http://www.makphet.com/"
+    },
+    {
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/0c/a6/a6/12/inside-restaurant.jpg",
+      "bookmarked": false,
+      "liked": false,
+      "title": "L'Adresse de Tinay",
+      "sub_title": "French Cuisine",
+      "details": "L'Adresse de Tinay is a charming restaurant in Vientiane, specializing in French cuisine. Guests can enjoy a delightful dining experience with a range of classic French dishes.",
+      "website": "https://www.facebook.com/restauranttinay/"
+    },
+    {
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/07/da/23/5b/kualao-restaurant.jpg",
+      "bookmarked": false,
+      "liked": false,
+      "title": "Kualao Restaurant",
+      "sub_title": "Laotian, Thai, Vietnamese Cuisine",
+      "details": "Kualao Restaurant offers a diverse menu featuring Laotian, Thai, and Vietnamese dishes. The restaurant's relaxed ambiance and flavorful food make it a popular choice among locals and tourists alike.",
+      "website": "https://kualao.com/"
+    },
+    {
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/04/61/fc/29/ray-s-grille.jpg",
+      "bookmarked": false,
+      "liked": false,
+      "title": "Ray's Grille",
+      "sub_title": "American, International Cuisine",
+      "details": "Ray's Grille is a restaurant in Vientiane known for its American and international cuisine. Guests can enjoy a wide range of dishes in a comfortable and welcoming setting.",
+      "website": "http://www.raysgrille.com/"
+    },
+    {
+      "image": "https://www.inthira.com/wp-content/uploads/2018/08/traditional-lao-set.jpg",
+      "bookmarked": false,
+      "liked": false,
+      "title": "Kop Chai Deu",
+      "sub_title": "Laotian, International Cuisine",
+      "details": "Kop Chai Deu is a popular restaurant offering a mix of Laotian and international dishes. The restaurant's lively atmosphere and live music performances create a vibrant dining experience.",
+      "website": "http://www.kopchaideu.com/"
+    }
   ]
 }

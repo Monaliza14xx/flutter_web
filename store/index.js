@@ -8,7 +8,7 @@ const mutations = {
 
 function state() {
   return {
-    _state: 0,
+    _state: null,
   }
 }
 

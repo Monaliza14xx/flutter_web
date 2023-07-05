@@ -3,29 +3,28 @@
     v-model="state"
     :background-color="color"
     dark
-    shift
     fixed
   >
     <v-btn>
-      <span>Home</span>
+      <b>ໜ້າຫຼັກ</b>
 
       <v-icon>mdi-home</v-icon>
     </v-btn>
 
     <v-btn>
-      <span>Places</span>
+      <b>ສະຖານທີ່</b>
 
       <v-icon>mdi-map-marker</v-icon>
     </v-btn>
 
     <v-btn>
-      <span>Bookmark</span>
+      <b>ບັນທຶກໄວ້</b>
 
       <v-icon>mdi-image-album</v-icon>
     </v-btn>
 
     <v-btn>
-      <span>Profile</span>
+      <b>ໂປຣໄຟລ໌</b>
 
       <v-icon>mdi-account-box</v-icon>
     </v-btn>
