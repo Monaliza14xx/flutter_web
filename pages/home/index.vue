@@ -135,39 +135,39 @@ export default {
           icon: 'mdi-apps',
           text: 'ທັງໝົດ',
           color: 'blue',
-          to: '/content?category=all',
+          to: '/content/province?index=0&&&category=all&type=recommends',
         },
         {
           icon: 'mdi-image-filter-hdr',
           text: 'ພູ - ຜາ',
           color: 'success',
-          to: '/content?category=hill',
+          to: '/content/province?index=0&&&category=hill&type=recommends',
         },
         {
           icon: 'mdi-home-variant',
           text: 'ວັດ',
           color: 'orange',
-          to: '/content?category=temple',
+          to: '/content/province?index=0&&&category=temple&type=recommends',
         },
         {
           icon: 'mdi-home-city',
           text: 'ທີ່ພັກ',
           color: 'red',
-          to: '/content?category=hotel',
+          to: '/content/province?index=0&&&category=hotel&type=recommends',
         },
         {
           icon: 'mdi-silverware-fork-knife',
           text: 'ຮ້ານອາຫານ',
           color: 'pink',
-          to: '/content?category=restaurants',
+          to: '/content/province?index=0&&&category=restaurants&type=recommends',
         },
       ],
       recommends: [],
     }
   },
   methods: {
-    goTo(to) {
-      this.$router.push(to)
+    goTo(value) {
+      this.$router.push(value)
     },
     toggle_like(item) {
       item.liked = !item.liked
@@ -186,7 +186,7 @@ export default {
     },
   },
   mounted() {
-    this.$store.commit('SET_STATE', 0)
+    // this.$store.commit('SET_STATE', 0)
     this.getData()
   },
 }

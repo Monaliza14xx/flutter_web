@@ -1,13 +1,26 @@
 <template>
   <div>
-    <app-bar></app-bar>
+    <v-row class="mb-4" align="center">
+      <v-col cols="2">
+        <v-btn rounded color="blue" @click="$router.go(-1)">
+          <v-icon large color="white">mdi-chevron-left</v-icon>
+        </v-btn>
+      </v-col>
+      <v-col align="center"
+        ><h3>{{ provinces?.text }}</h3></v-col
+      >
+      <v-col cols="2"></v-col>
+    </v-row>
     <div>
       <v-card flat>
-        <v-sheet id="header-card" height="150px"> </v-sheet>
-        <v-card-title><h2>{{provinces.text}}, ລາວ</h2></v-card-title>
+        <!-- <v-sheet id="header-card" height="150px"> </v-sheet> -->
+        <img :src="provinces?.img" width="100%" height="150px" alt="" />
+        <v-card-title
+          ><h2>{{ provinces?.text }}, ລາວ</h2></v-card-title
+        >
         <v-card-subtitle class="mt-1">
           ແນະນຳສະຖານທີ່ທ່ອງທ່ຽວ, ທີ່ພັກ, ແລະ ຮ້ານອາຫານ ໃນ
-          {{provinces.text}}</v-card-subtitle
+          {{ provinces?.text }}</v-card-subtitle
         >
       </v-card>
       <v-divider class="my-2"></v-divider>
@@ -63,6 +76,7 @@
 <script>
 import card from '~/components/card.vue'
 export default {
+  layout: 'empty',
   components: { card },
   name: 'Content',
   data() {
@@ -76,7 +90,7 @@ export default {
       recommends_temple: [],
       recommends_hotel: [],
       recommends_restaurants: [],
-      provinces:[]
+      provinces: [],
     }
   },
   methods: {
@@ -86,7 +100,7 @@ export default {
           'https://raw.githubusercontent.com/Monaliza14xx/flutter_web/main/mockup_data.json'
         )
         .then((res) => {
-          console.log('🚀 ~ file: index.vue:87 ~ .then ~ res:', res)
+          // console.log('🚀 ~ file: index.vue:87 ~ .then ~ res:', res)
           this.recommends = res.data.recommends
           this.recommends_hill = res.data.recommends_hill
           this.recommends_temple = res.data.recommends_temple
@@ -97,7 +111,6 @@ export default {
     },
   },
   mounted() {
-    this.$store.commit('SET_STATE', 1)
     this.getData()
   },
 }

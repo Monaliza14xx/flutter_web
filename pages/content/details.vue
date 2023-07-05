@@ -82,11 +82,6 @@ export default {
             default:
               break
           }
-          console.log('this.data :>> ', this.data)
-          // this.$el.style.setProperty(
-          //   '--background-image',
-          //   `url(${this.data?.image})`
-          // )
         })
         .catch((error) => {
           console.error(error)
@@ -94,10 +89,7 @@ export default {
     },
     load() {
       this.isLoad = true
-      console.log(
-        '🚀 ~ file: contact.vue:66 ~ load ~ this.isLoad:',
-        this.isLoad
-      )
+     
     },
   },
   mounted() {

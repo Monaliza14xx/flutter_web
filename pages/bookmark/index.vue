@@ -13,7 +13,7 @@ export default {
         }
     },
     mounted() {
-   this.$store.commit('SET_STATE', 2)
+  //  this.$store.commit('SET_STATE', 2)
   },
 }
 </script>

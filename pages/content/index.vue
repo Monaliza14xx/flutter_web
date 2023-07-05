@@ -31,7 +31,6 @@ export default {
   name: 'Content',
   data() {
     return {
-      value: 1,
       category: this.$route.query.category,
       provinces: [
         {
@@ -68,12 +67,12 @@ export default {
           'https://raw.githubusercontent.com/Monaliza14xx/flutter_web/main/mockup_data.json'
         )
         .then((res) => {
-          console.log('🚀 ~ file: index.vue:87 ~ .then ~ res:', res)
-          this.recommends = res.data.recommends
-          this.recommends_hill = res.data.recommends_hill
-          this.recommends_temple = res.data.recommends_temple
-          this.recommends_hotel = res.data.recommends_hotel
-          this.recommends_restaurants = res.data.recommends_restaurants
+          // console.log('🚀 ~ file: index.vue:87 ~ .then ~ res:', res)
+          // this.recommends = res.data.recommends
+          // this.recommends_hill = res.data.recommends_hill
+          // this.recommends_temple = res.data.recommends_temple
+          // this.recommends_hotel = res.data.recommends_hotel
+          // this.recommends_restaurants = res.data.recommends_restaurants
         })
     },
     goTo(to) {
